@@ -1,0 +1,48 @@
+baseURL: https://guilhem.github.io/
+languageCode: "fr-FR"
+defaultContentLanguage: fr
+title: "Blog d'un SRE libre"
+
+theme: "archie"
+
+copyright: "© Guilhem"
+
+# Code Highlight
+pygmentsstyle: "monokai"
+pygmentscodefences: true
+pygmentscodefencesguesssyntax: true
+
+enableGitInfo: true
+
+paginate: 3 # articles per page
+
+params:
+  mode: "auto" # color-mode → light,dark,toggle or auto
+  useCDN: false # don't use CDNs for fonts and icons, instead serve them locally.
+  subtitle: "Et si on parlait DevOps ?"
+
+  # Social Tags
+  social:
+    - name: "GitHub"
+      icon: "github"
+      url: "https://github.com/athul/archie"
+    - name: "Twitter"
+      icon: "twitter"
+      url: "https://twitter.com/guilhemlettron/"
+
+# Main menu Items
+
+menu:
+  main:
+    - name: "Accueil"
+      url: "/"
+      weight: 1
+    - name: "Tous les articles"
+      url: "/posts"
+      weight: 2
+    - name: "À propos"
+      url: "/about"
+      weight: 3
+    - name: "Tags"
+      url: "/tags"
+      weight: 4
