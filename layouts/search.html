@@ -1,0 +1,10 @@
+{{ define "main" }}
+<header class="page-header"><p class="eyebrow">Dans le carnet</p><h1>{{ .Title }}<span class="accent">.</span></h1><p class="post-description">Un sujet, une commande, un bout de code.</p></header>
+<div id="searchbox" class="searchbox">
+  <label for="searchInput">Rechercher dans les articles</label>
+  <input id="searchInput" disabled placeholder="Ex. : Bash, déploiement, Markdown…" type="search" autocomplete="off" maxlength="64">
+  <p class="search-help">La recherche s'effectue dans votre navigateur. Utilisez les flèches pour parcourir les résultats.</p>
+  <ul id="searchResults" class="searchResults" aria-label="Résultats de recherche" aria-live="polite"></ul>
+  <noscript><p>La recherche nécessite JavaScript. Vous pouvez aussi <a href="{{ "posts/" | relURL }}">parcourir tous les articles</a>.</p></noscript>
+</div>
+{{ end }}

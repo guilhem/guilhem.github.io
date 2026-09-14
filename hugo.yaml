@@ -1,0 +1,71 @@
+baseURL: https://guilhem.github.io/
+title: Guilhem Lettron
+locale: fr-FR
+defaultContentLanguage: fr
+theme: PaperMod
+enableRobotsTXT: true
+copyright: "© Guilhem Lettron · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.fr)"
+
+pagination:
+  pagerSize: 8
+
+taxonomies:
+  tag: tags
+
+outputs:
+  home: [HTML, RSS, JSON]
+
+markup:
+  highlight:
+    noClasses: false
+    lineNos: false
+    tabWidth: 2
+  goldmark:
+    renderer:
+      unsafe: false
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
+
+params:
+  description: "Le carnet technique de Guilhem Lettron. Cloud native, Kubernetes, SRE et logiciel libre : du code et des notes de terrain."
+  author: Guilhem Lettron
+  mainSections: [posts]
+  defaultTheme: auto
+  disableThemeToggle: false
+  disableScrollToTop: true
+  ShowReadingTime: true
+  hideAuthor: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  TocOpen: true
+  UseHugoToc: true
+  ShowPostNavLinks: true
+  ShowRssButtonInSectionTermList: true
+  DateFormat: "2 January 2006"
+  assets:
+    favicon: /favicon.svg
+    favicon16x16: /favicon-16x16.png
+    favicon32x32: /favicon-32x32.png
+    apple_touch_icon: /apple-touch-icon.png
+    safari_pinned_tab: /favicon.svg
+    theme_color: "#f6f9fd"
+  fuseOpts:
+    ignoreLocation: true
+    threshold: 0.3
+    keys: [title, summary, content]
+
+menu:
+  main:
+    - name: Articles
+      pageRef: /posts
+      weight: 10
+    - name: Sujets
+      pageRef: /tags
+      weight: 20
+    - name: À propos
+      pageRef: /about
+      weight: 30
+    - name: Recherche
+      pageRef: /search
+      weight: 40

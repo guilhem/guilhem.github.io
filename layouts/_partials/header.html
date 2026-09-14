@@ -1,0 +1,14 @@
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <nav class="site-nav" aria-label="Navigation principale">
+    <a class="wordmark" href="{{ site.Home.RelPermalink }}" aria-label="Guilhem Lettron — accueil">guilhem<span aria-hidden="true">_</span></a>
+    <ul class="site-menu">
+      {{ range site.Menus.main }}
+      <li><a href="{{ .URL }}"{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Changer le thème clair ou sombre" title="Changer le thème clair ou sombre">
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none"/></svg>
+    </button>
+  </nav>
+</header>
