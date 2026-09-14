@@ -1,0 +1,7 @@
+{{ define "main" }}
+<article class="post-single" lang="en">
+  <div class="post-content md-content">
+    {{ readFile "profile/README.md" | .RenderString }}
+  </div>
+</article>
+{{ end }}

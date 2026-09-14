@@ -72,7 +72,13 @@ précédente de sa PR, tandis qu'une publication en cours se termine normalement
 ## Entretenir et personnaliser
 
 - Identité, menus et options du thème : `hugo.yaml`.
-- Accueil : `layouts/home.html`. Biographie : `content/about.md`.
+- Accueil : `layouts/home.html`.
+- À propos : `layouts/profile.html` affiche directement `profile/README.md`, sans
+  réécriture. `profile/` est un sous-module du dépôt
+  [guilhem/guilhem](https://github.com/guilhem/guilhem), récupéré par le checkout
+  récursif déjà utilisé en CI. Pour reprendre une nouvelle version du profil,
+  lancer `git submodule update --remote profile`, relancer Hugo pour vérifier le rendu, puis
+  enregistrer le nouveau pointeur du sous-module dans un commit.
 - Styles : `assets/css/extended/notebook.css`.
 - Hugo : modifier `.hugo-version`, utiliser cette version localement et relancer les vérifications.
 - PaperMod : `git -C themes/PaperMod fetch`, choisir un commit amont, puis
