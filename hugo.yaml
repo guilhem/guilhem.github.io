@@ -28,7 +28,7 @@ markup:
     endLevel: 3
 
 params:
-  description: "Le carnet technique de Guilhem Lettron. Cloud native, Kubernetes, SRE et logiciel libre : du code et des notes de terrain."
+  description: "Le carnet de Guilhem Lettron, architecte cloud native. Kubernetes, infrastructure et logiciel libre : du code expliqué et des retours de terrain."
   author: Guilhem Lettron
   mainSections: [posts]
   defaultTheme: auto
