@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Lang }}" data-theme="{{ site.Params.defaultTheme }}">
+<head>{{ partial "head.html" . }}</head>
+<body class="{{ if .IsHome }}home{{ else if ne .Kind "page" }}list{{ end }}" id="top">
+  {{ partial "header.html" . }}
+  <main class="main" id="contenu" tabindex="-1">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+</body>
+</html>

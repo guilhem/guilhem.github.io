@@ -1,0 +1,57 @@
+{{ define "main" }}
+<section class="hero" aria-labelledby="intro-title">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="accent-dot" aria-hidden="true"></span> Cloud native · SRE · Open source</p>
+    <h1 id="intro-title">Du code.<br>Au <span>cloud.</span></h1>
+    <p class="hero-description">Kubernetes et systèmes distribués.<br>Du code, des retours de terrain.<br>Et des notes à partager.</p>
+    <div class="hero-links">
+      <a class="primary-link" href="{{ "posts/" | relURL }}">Explorer les articles <span aria-hidden="true">↗</span></a>
+      <a class="text-link" href="https://github.com/guilhem">Sur GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <div class="cluster" role="img" aria-label="Illustration cloud native : un nuage relié à Kubernetes, qui orchestre trois pods.">
+    <div class="cluster-header"><span>~/guilhem</span><span>notes / cloud native</span></div>
+    <svg class="cluster-map" viewBox="0 0 440 290" aria-hidden="true" focusable="false">
+      <circle cx="220" cy="133" r="84" fill="none" stroke="#2b4971" stroke-dasharray="3 7"/>
+      <path d="M220 65V83M220 183v24M90 225v-18h260v18M220 207v18" fill="none" stroke="#619ce1" stroke-width="1.5"/>
+      <path d="M201 65h42a17 17 0 0 0 1-34 24 24 0 0 0-45-5 19 19 0 0 0 2 39Z" fill="#172f50" stroke="#87c7ef" stroke-width="1.5"/>
+      <path d="m220 83 44 25v50l-44 25-44-25v-50Z" fill="#173d70" stroke="#73adfa" stroke-width="1.5"/>
+      <text x="220" y="131" class="cluster-mark">K8s</text>
+      <text x="220" y="154">Kubernetes</text>
+      <g fill="#142944" stroke="#446b9c">
+        <rect x="56" y="225" width="68" height="38" rx="7"/>
+        <rect x="186" y="225" width="68" height="38" rx="7"/>
+        <rect x="316" y="225" width="68" height="38" rx="7"/>
+      </g>
+      <g fill="#89d5e6"><circle cx="90" cy="207" r="3"/><circle cx="220" cy="207" r="3"/><circle cx="350" cy="207" r="3"/></g>
+      <text x="90" y="249">pod</text><text x="220" y="249">pod</text><text x="350" y="249">pod</text>
+    </svg>
+    <div class="cluster-footer"><span>Du code à l'infrastructure.</span><span aria-hidden="true">↗</span></div>
+  </div>
+</section>
+
+<div class="journal-grid">
+  <section aria-labelledby="articles-title">
+    <div class="section-heading"><h2 id="articles-title">Dernières notes<span class="accent">.</span></h2><a href="{{ "index.xml" | relURL }}" class="feed-link">Flux RSS ↗</a></div>
+    {{ range first 4 (where site.RegularPages "Section" "posts") }}
+    <article class="note-entry">
+      <div class="note-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format "2 Jan 2006" }}</time><span>{{ .ReadingTime }} min de lecture</span>{{ if .Draft }}<span class="draft-label">Brouillon</span>{{ end }}</div>
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }} <span aria-hidden="true">↗</span></a></h3>
+      <p>{{ .Description | default (.Summary | plainify) }}</p>
+      <ul class="note-tags" aria-label="Sujets de l'article">{{ range .GetTerms "tags" }}<li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>{{ end }}</ul>
+    </article>
+    {{ else }}
+    <div class="empty-notes"><span class="empty-mark" aria-hidden="true">&gt;_</span><h3>Le carnet s'ouvre.</h3><p>Les premières notes arrivent bientôt.<br>Le flux RSS est prêt pour la suite.</p></div>
+    {{ end }}
+    <a class="all-notes" href="{{ "posts/" | relURL }}">Tous les articles <span aria-hidden="true">→</span></a>
+  </section>
+  <aside class="author-note" aria-labelledby="author-title">
+    <p class="eyebrow">Derrière le clavier</p>
+    <div class="author-monogram" aria-hidden="true">gl<span>_</span></div>
+    <h2 id="author-title">Guilhem Lettron</h2>
+    <p>Cloud native, Kubernetes et logiciel libre. Des systèmes à comprendre, du code à partager. Souvent en marinière.</p>
+    <a class="text-link" href="{{ "about/" | relURL }}">À propos du carnet <span aria-hidden="true">↗</span></a>
+    <div class="author-links"><a href="https://github.com/guilhem">GitHub ↗</a><a href="{{ "index.xml" | relURL }}">RSS ↗</a></div>
+  </aside>
+</div>
+{{ end }}

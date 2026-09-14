@@ -1,0 +1,5 @@
+<figure class="code-example">
+  <figcaption><span>{{ .Type | default "texte" }}</span>{{ with .Attributes.title }}<span>{{ . }}</span>{{ end }}</figcaption>
+  {{ $result := transform.HighlightCodeBlock . }}
+  {{ $result.Wrapped }}
+</figure>
