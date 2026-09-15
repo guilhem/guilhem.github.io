@@ -6,6 +6,10 @@ theme: PaperMod
 enableRobotsTXT: true
 copyright: "© Guilhem Lettron · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.fr)"
 
+caches:
+  getresource:
+    maxAge: 0
+
 pagination:
   pagerSize: 8
 
