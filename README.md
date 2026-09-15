@@ -72,7 +72,16 @@ précédente de sa PR, tandis qu'une publication en cours se termine normalement
 ## Entretenir et personnaliser
 
 - Identité, menus et options du thème : `hugo.yaml`.
-- Accueil : `layouts/home.html`. Biographie : `content/about.md`.
+- Accueil : `layouts/home.html`.
+- À propos : `layouts/profile.html` récupère le `README.md` de la branche `master`
+  du dépôt [guilhem/guilhem](https://github.com/guilhem/guilhem) avec
+  `resources.GetRemote`, puis rend son Markdown sans réécriture. Le cache
+  `getresource` est désactivé (`maxAge: 0`) pour le récupérer à chaque compilation.
+  La génération nécessite un accès réseau et échoue si le fichier est indisponible.
+  Après une modification du profil, relancer Hugo (ou redémarrer `hugo server`)
+  pour actualiser l'aperçu. Pour publier la mise à jour, lancer le workflow depuis
+  `master` ou pousser un changement au blog : le dépôt du profil ne déclenche pas
+  automatiquement une publication.
 - Styles : `assets/css/extended/notebook.css`.
 - Hugo : modifier `.hugo-version`, utiliser cette version localement et relancer les vérifications.
 - PaperMod : `git -C themes/PaperMod fetch`, choisir un commit amont, puis

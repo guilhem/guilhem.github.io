@@ -1,0 +1,12 @@
+{{ define "main" }}
+<article class="post-single" lang="en">
+  <div class="post-content md-content">
+    {{ $url := "https://raw.githubusercontent.com/guilhem/guilhem/master/README.md" }}
+    {{ with resources.GetRemote $url }}
+      {{ .Content | $.RenderString }}
+    {{ else }}
+      {{ errorf "Unable to fetch profile README: %s" $url }}
+    {{ end }}
+  </div>
+</article>
+{{ end }}
